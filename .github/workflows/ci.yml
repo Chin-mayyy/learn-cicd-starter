@@ -13,11 +13,8 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
+      - name: Install dependencies
+        uses: npm ci
 
-      - name: Echo Node Version
-        run: node --version
-
+      - name: Run test
+        run: npm run test
